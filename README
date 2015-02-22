@@ -1,5 +1,7 @@
 Locke - Video rental store management tool
 
+Copyright (C) 2005 Matheus Borges Teixeira.
+
 This tool models the management of a video rental store. It controls some basic finances and lending of several different collections, in four different categories (CDs, Videos, Games and Books). A complete user management is also present. The tool uses simple, unprotected, text files for storing data. Developed and designed for a particular system while working there. The intention of the tool was to simplify and facilitate the management of the store.
 
 For more information please open the manual: locke/resources/manual/index.html
