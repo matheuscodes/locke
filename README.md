@@ -1,6 +1,7 @@
 # Locke
 
 Locke - Video rental store management tool
+
 Copyright (C) 2005 Matheus Borges Teixeira.
 
 <img src="https://raw.githubusercontent.com/matheuscodes/locke/master/resources/logo-carregando.png" />
