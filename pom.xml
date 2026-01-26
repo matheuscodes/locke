@@ -19,12 +19,12 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+        <sonar.organization>matheuscodes-analysed</sonar.organization>
     </properties>
 
     <build>
         <plugins>
 
-            <!-- Compile Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -35,7 +35,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Create executable JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -43,11 +42,16 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- IMPORTANT: must be fully qualified -->
                             <mainClass>main.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
             </plugin>
 
             <!-- Copy DB files next to the JAR -->
