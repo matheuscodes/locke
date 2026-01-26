@@ -5,16 +5,19 @@ on:
     branches:
       - master   # Trigger on any commit merged to master
 
+permissions:
+  contents: write
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Java 1.8
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '1.8'
           distribution: 'temurin'
@@ -37,19 +40,11 @@ jobs:
           zip -r locke-${VERSION}.zip *
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION }}
           name: Release ${{ env.VERSION }}
           body: "Automatic release for version ${{ env.VERSION }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload ZIP as release asset
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v${{ env.VERSION }}
-          name: locke-${{ env.VERSION }}.zip
-          asset_path: release/locke-${{ env.VERSION }}.zip
+          files: release/locke-${{ env.VERSION }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
