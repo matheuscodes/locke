@@ -30,6 +30,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run SonarCloud analysis
+        if: github.actor != 'dependabot[bot]'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
