@@ -25,7 +25,6 @@
     <build>
         <plugins>
 
-            <!-- Compile Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -36,7 +35,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Create executable JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -44,7 +42,6 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- IMPORTANT: must be fully qualified -->
                             <mainClass>main.Main</mainClass>
                         </manifest>
                     </archive>
