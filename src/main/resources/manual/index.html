@@ -1,0 +1,102 @@
+<!-- 
+ *  Copyright (C) 2005 Matheus Borges Teixeira
+ *  
+ *  This file is part of Locke, a tool for managing library rentals.
+ *
+ *  Locke is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Locke is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Locke.  If not, see <http://www.gnu.org/licenses/>. 
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+h2{
+  padding: 2cm 0 0 0;
+}
+</style>
+<title>Manual - Locke</title>
+</head>
+
+<body>
+<center>
+<h1>Manual de Instruções</h1>
+Este é um programa simples para gerenciar locações.<br/>
+Ele foi desenvolvido para a BiblioteCAASO.<br/>
+O sistema é simples e permite organização dos acervos em 4 diferente categorias: CDs, Livros, Vídeos e Jogos.
+Além do gerenciamento de usuários, o programa oferece lógica específica da BiblioteCAASO, como duplo endereço e gerenciamento de pontos bônus para desconto nas locações. Foi desenvolvido usando Java e toda a manutenção de dados é feita por arquivos de texto.
+</center>
+<table cellspacing="0" width="100%">
+<tr>
+<td align="center">
+<h2>Barra Lateral</h2>
+<img src="1.png" /><br/>
+É usada para alternar entre os painéis principais do programa.
+<ld>
+<li><strong>CDs, Vídeos, Livros and Jogos:</strong> Abre o painel de manutenção de acervos.</li>
+<li><strong>Usuários:</strong> Abre o painel de manutenção de usuários da biblioteca.</li>
+<li><strong>Configurações:</strong> Abre o painel de configuração da biblioteca.</li>
+<li><strong>Locações:</strong> Abre o painel de manutenção das locações em aberto.</li>
+<li><strong>Movimentações:</strong> Abre o painel de controle de caixa e histórico.</li>
+</ld>
+</td>
+</tr>
+<tr>
+
+<td align="center">
+<h2>Manutenção de Acervos</h2>
+<img src="2.png" /><br/>
+O painel é o mesmo para todos os tipos de acervo. A diferença está apenas na semântica do conteúdo, pois CDs contêm "Álbum e Artista", Videos contêm "Título e Título Original", Jogos contêm "Título e Classificação", todos com "Código" e Livros que contêm "Autor, Título e Assunto.". Não é possível editar um item do acervo depois que o mesmo for adicionado, mas é possível remover. A lista de itens do acervo pode ser ordenada por qualquer um dos três parâmetros e também pelo número de retiradas.
+</td>
+</tr>
+<tr>
+<td align="center">
+<h2>Manutenção de Usuários e Nova Locação</h2>
+<img src="3.png" /><br/>
+Assim como na manutenção de acervos, é apenas possível adicionar e remover usuários, não é possível editar informações depois de inseridas. Ao selecionar usuários, é possível observar todas as informações e também um histórico de locações efetuadas.
+<h3>Novo Cadastro</h3>
+O botão "Novo Cadastro" abre uma nova janela como a seguinte: <br/>
+<img src="4.png" />
+<h3> Nova Locação</h3>
+O botão "Nova Locação" abre a seguinte janela com as informações para locação:<br/>
+<img src="5.png" /><br/>
+Os acervos permitidos são apenas para referência, não existe nenhuma restrição de software para seleção de itens. A busca funciona por qualquer conjunto de caracteres, e encontrará apenas comparações exatas (sem substituição de caracteres especiais ou letras maiúsculas). É preciso buscar para adicionar um item para locação. Depois de adicionado, não é possível remover um item da locação. A data de devolução é calculada com base nas configurações da biblioteca para o item que contiver a data mais próxima. <strong>Importante:</strong> O cálculo da devolução é bem específico do sistema utilizado pela BiblioteCAASO, sendo sempre uma semana e caso seja no Sábado ou Domingo, é extendida até a próxima Segunda.
+</td>
+</tr>
+<tr>
+<td align="center">
+<h2>Configuração da Biblioteca</h2>
+<img src="6.png" /><br/>
+Neste painel é possível remover e adicionar acervos dentro das quatro categorias e configurar, por categoria, quantas semanas o item pode ficar em uma locação.
+</td>
+</tr>
+<tr>
+<td align="center">
+<h2>Manutenção de Locações</h2>
+<img src="7.png" /><br/>
+As locações são ordenadas por ordem em que foram feitas, e não pela data de devolução. 
+<h3>Devolução</h3>
+O botão devolução abre a seguinte janela:<br/>
+<img src="8.png" /><br/>
+É preciso inserir o valor que será cobrado do usuário para controle financeiro. A quantidade de "Marquinhas" (Pontos Bônus) são mostrados para referência. É possível adicionar marquinhas ou removê-las, colocando valores negativos.
+</td>
+</tr>
+<tr>
+<td align="center">
+<h2>Controle de Caixa</h2>
+<img src="9.png" /></td>
+Neste painel é possível ver o extrato de transações, creditar ou debitar valores no caixa da biblioteca. Todas as devoluções inserem uma nova entrada.
+</tr>
+</table>
+
+</body>
+</html>
