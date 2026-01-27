@@ -17,6 +17,7 @@ import database.lists.CDs;
 import database.lists.JOGOs;
 import database.lists.LIVROs;
 import database.lists.VIDEOs;
+import windows.Carregando;
 
 class ConfiguracoesTest {
 
@@ -110,11 +111,13 @@ class ConfiguracoesTest {
 
     @AfterEach
     void close() {
+        Sistema.Barra = null;
         Sistema.BiblioteCAASO = null;
     }
 
     @BeforeEach
     void setUp() throws IOException {
+        Sistema.Barra = new Carregando();
         Sistema.BiblioteCAASO = new StubBiblioteCAASO();
         panel = new Configuracoes();
     }
