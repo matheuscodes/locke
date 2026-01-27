@@ -23,7 +23,14 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      - run: mvn clean test
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
+
+      - name: Run tests in virtual display
+        run: |
+          Xvfb :99 -screen 0 1280x1024x24 &
+          export DISPLAY=:99
+          mvn clean verify
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4

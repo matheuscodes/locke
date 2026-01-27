@@ -60,9 +60,6 @@
                 <configuration>
                     <!-- Required for Java 8 + JUnit 5 -->
                     <useModulePath>false</useModulePath>
-                    <systemPropertyVariables>
-                        <java.awt.headless>true</java.awt.headless>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
