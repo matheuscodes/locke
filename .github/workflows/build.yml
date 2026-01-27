@@ -23,7 +23,20 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      - run: mvn clean package
+      - run: mvn clean test
+
+      - name: Upload JaCoCo report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/jacoco.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: target/site/jacoco/jacoco.xml
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Set up Java 17 for Sonar
         uses: actions/setup-java@v4
