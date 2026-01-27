@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import javax.swing.DefaultListModel;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -70,9 +71,15 @@ class VisualUsuarioEditTest {
 
     }
 
+    @AfterEach
+    void close() {
+        Sistema.Barra =  null;
+        Sistema.BiblioteCAASO = null;
+    }
     @BeforeEach
     void setUp() throws java.io.IOException {
         // Stub the static Sistema.BiblioteCAASO dependency
+        Sistema.Barra = new Carregando();
         Sistema.BiblioteCAASO = new StubBiblioteCAASO();
 
         // Populate the todos list with sample groups

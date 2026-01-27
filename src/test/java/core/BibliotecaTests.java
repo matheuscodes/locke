@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
 
 import javax.swing.DefaultListModel;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +27,10 @@ class BibliotecaTests {
 
     private Biblioteca biblioteca;
 
+    @AfterEach
+    void close() {
+        Sistema.Barra =  null;
+    }
     @BeforeEach
     void setUp() throws IOException {
         Sistema.Barra = new Carregando();

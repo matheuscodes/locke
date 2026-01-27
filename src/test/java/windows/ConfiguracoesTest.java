@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -105,6 +106,11 @@ class ConfiguracoesTest {
         public boolean removeLIVRO(String nome) { return true; }
         @Override
         public boolean removeJOGO(String nome) { return true; }
+    }
+
+    @AfterEach
+    void close() {
+        Sistema.BiblioteCAASO = null;
     }
 
     @BeforeEach
