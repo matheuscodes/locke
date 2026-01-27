@@ -23,7 +23,14 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      - run: mvn clean package
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
+
+      - name: Run tests in virtual display
+        run: |
+          Xvfb :99 -screen 0 1280x1024x24 &
+          export DISPLAY=:99
+          mvn clean verify
 
       - name: Set up Java 17 for Sonar
         uses: actions/setup-java@v4
@@ -41,4 +48,5 @@ jobs:
             -Dsonar.organization=matheuscodes-analysed \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=${SONAR_TOKEN} \
-            -Dsonar.java.binaries=target
+            -Dsonar.java.binaries=target \
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
