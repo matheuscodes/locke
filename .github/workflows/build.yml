@@ -25,12 +25,6 @@ jobs:
 
       - run: mvn clean test
 
-      - name: Upload JaCoCo report
-        uses: actions/upload-artifact@v3
-        with:
-          name: jacoco-report
-          path: target/site/jacoco/jacoco.xml
-
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
