@@ -25,7 +25,9 @@ class GroupTest {
         }
 
         @Override
-        public void set(String A, String B, String C) {}
+        public void set(String a, String b, String c) {
+            // dummy implementation for test
+        }
 
         @Override
         public String getIdentity() {

@@ -21,13 +21,15 @@ class ItemsTest {
         }
 
         @Override
-        public void toFile(java.io.PrintStream arquivo) {}
+        public void toFile(java.io.PrintStream arquivo) {
+            // dummy implementation for test
+        }
 
         @Override
-        public void set(String A, String B, String C) {
-            this.a = A;
-            this.b = B;
-            this.c = C;
+        public void set(String a, String b, String c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
 
         @Override

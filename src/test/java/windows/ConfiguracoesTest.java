@@ -82,22 +82,38 @@ class ConfiguracoesTest {
         public int getSemanaJOGO() { return 4; }
 
         @Override
-        public void setSemanaCD(int v) {}
+        public void setSemanaCD(int v) {
+            // dummy implementation for test
+        }
         @Override
-        public void setSemanaVIDEO(int v) {}
+        public void setSemanaVIDEO(int v) {
+            // dummy implementation for test
+        }
         @Override
-        public void setSemanaLIVRO(int v) {}
+        public void setSemanaLIVRO(int v) {
+            // dummy implementation for test
+        }
         @Override
-        public void setSemanaJOGO(int v) {}
+        public void setSemanaJOGO(int v) {
+            // dummy implementation for test
+        }
 
         @Override
-        public void novoCD(String nome) {}
+        public void novoCD(String nome) {
+            // dummy implementation for test
+        }
         @Override
-        public void novoVIDEO(String nome) {}
+        public void novoVIDEO(String nome) {
+            // dummy implementation for test
+        }
         @Override
-        public void novoLIVRO(String nome) {}
+        public void novoLIVRO(String nome) {
+            // dummy implementation for test
+        }
         @Override
-        public void novoJOGO(String nome) {}
+        public void novoJOGO(String nome) {
+            // dummy implementation for test
+        }
 
         @Override
         public boolean removeCD(String nome) { return true; }

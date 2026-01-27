@@ -48,10 +48,14 @@ class LocacaoTest {
         }
 
         @Override
-        public void toFile(PrintStream arquivo) {}
+        public void toFile(PrintStream arquivo) {
+            // dummy implementation for test
+        }
 
         @Override
-        public void set(String A, String B, String C) {}
+        public void set(String a, String b, String c) {
+            // dummy implementation for test
+        }
 
         @Override
         public String getIdentity() {

@@ -44,7 +44,7 @@ class VisualUsuarioEditTest {
 
         @Override
         public void setAcervo(Item[] novo) {
-
+            // dummy implementation for test
         }
 
         @Override
